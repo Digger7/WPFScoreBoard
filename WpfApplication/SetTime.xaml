@@ -1,0 +1,23 @@
+﻿<Window x:Class="WpfApplication2.SetTime"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:commonWPF="clr-namespace:Rubenhak.Common.WPF"
+        Title="Установка общего времени" Height="181" Width="345" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow"  ResizeMode="NoResize">
+    <Grid>
+        <TextBox Height="83" HorizontalAlignment="Left" Margin="12,27,0,0" Name="MinutesText" VerticalAlignment="Top" Width="120" Text="{Binding ElementName=MinutesSlider, Path=Value}" FontSize="60" HorizontalContentAlignment="Center" IsReadOnly="False" 
+                 commonWPF:TextBoxMaskBehavior.Mask="Integer" 
+                 commonWPF:TextBoxMaskBehavior.MinimumValue="0"
+                 commonWPF:TextBoxMaskBehavior.MaximumValue="10"/>
+        <Slider Height="81" HorizontalAlignment="Left" Margin="138,29,0,0" Name="MinutesSlider" VerticalAlignment="Top" Width="22" Orientation="Vertical" TickFrequency="1" TickPlacement="TopLeft" Maximum="10" SmallChange="1" Interval="1" LargeChange="1" IsSelectionRangeEnabled="False" IsMoveToPointEnabled="False" IsSnapToTickEnabled="True" />
+        <TextBox FontSize="60" Height="83" HorizontalAlignment="Left" HorizontalContentAlignment="Center" IsReadOnly="False" Margin="166,27,0,0" Name="SecondsText" Text="{Binding ElementName=SecondsSlider, Path=Value}" VerticalAlignment="Top" Width="120" 
+                 commonWPF:TextBoxMaskBehavior.Mask="Integer" 
+                 commonWPF:TextBoxMaskBehavior.MinimumValue="0"
+                 commonWPF:TextBoxMaskBehavior.MaximumValue="60"                 
+                 />
+        <Slider Height="81" HorizontalAlignment="Left" Interval="1" IsMoveToPointEnabled="False" IsSelectionRangeEnabled="False" IsSnapToTickEnabled="True" LargeChange="1" Margin="292,29,0,0" Maximum="60" Name="SecondsSlider" Orientation="Vertical" SmallChange="1" TickFrequency="2" TickPlacement="TopLeft" VerticalAlignment="Top" Width="22" />
+        <Button Content="Отмена" Height="23" HorizontalAlignment="Left" Margin="239,118,0,0" Name="button1" VerticalAlignment="Top" Width="75" IsCancel="True" />
+        <Button Content="Установить время" Height="23" HorizontalAlignment="Left" Margin="117,118,0,0" Name="button2" VerticalAlignment="Top" Width="116" Click="button2_Click" />
+        <Label Content="Минуты:" Height="28" HorizontalAlignment="Left" Margin="32,2,0,0" Name="label1" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" />
+        <Label Content="Секунды:" Height="28" HorizontalAlignment="Left" Margin="188,3,0,0" Name="label2" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" />
+    </Grid>
+</Window>

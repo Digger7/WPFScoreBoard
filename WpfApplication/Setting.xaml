@@ -1,0 +1,61 @@
+﻿<Window x:Class="WpfApplication2.Setting"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="SingleBorderWindow"
+        Title="Настройка параметров" Height="633" Width="522" ResizeMode="NoResize">
+    <Grid Height="593" Width="501">
+        <TextBox Height="40" HorizontalAlignment="Left" Margin="18,14,0,0" Name="RunningLine" VerticalAlignment="Top" Width="460" TextWrapping="Wrap" />
+        <Label Content="Бегущая строка" Height="28" HorizontalAlignment="Left" Margin="20,-7,0,0" Name="label1" VerticalAlignment="Top" FontWeight="Bold" />
+        <Button Content="Сохранить" DataContext="{Binding}" Height="23" HorizontalAlignment="Left" IsCancel="False" IsDefault="False" IsEnabled="True" Margin="18,567,0,0" Name="button1" VerticalAlignment="Top" Width="75" Click="button1_Click_1" />
+        <Button Content="Отмена" Height="23" HorizontalAlignment="Right" IsCancel="True" Margin="0,567,21,0" Name="button2" VerticalAlignment="Top" Width="75" />
+        <ComboBox Height="23" Margin="18,72,252,498" Name="RedPointsCombo" Text="" />
+        <Label Content="+1 очко красному участнику" Height="28" HorizontalAlignment="Left" Margin="18,52,0,0" Name="label2" VerticalAlignment="Top" />
+        <ComboBox Height="23" Margin="262,72,23,498" Name="BluePointsCombo" Text="" />
+        <Label Content="+1 очко синему участнику" Height="28" HorizontalAlignment="Left" Margin="262,52,0,0" Name="label3" VerticalAlignment="Top" />
+        <ComboBox Height="23" IsTextSearchEnabled="True" Margin="18,115,252,455" Name="ResetRedPointsCombo" Text="" />
+        <Label Content="сброс очков красного участника" Height="28" HorizontalAlignment="Left" Margin="18,93,0,0" Name="label4" VerticalAlignment="Top" />
+        <ComboBox Height="23" Margin="18,158,252,412" Name="RedWarningCombo" Text="" />
+        <Label Content="+1 предупреждение красному участнику" Height="28" HorizontalAlignment="Left" Margin="18,135,0,0" Name="label5" VerticalAlignment="Top" />
+        <ComboBox Height="23" HorizontalAlignment="Right" Margin="0,158,23,412" Name="BlueWarningCombo" Text="" Width="216" />
+        <Label Content="+1 предупреждение синему участнику" Height="28" HorizontalAlignment="Left" Margin="262,135,0,0" Name="label6" VerticalAlignment="Top" />
+        <ComboBox Height="23" IsTextSearchEnabled="True" Margin="18,199,252,371" Name="ResetRedWarningCombo" Text="" />
+        <Label Content="сброс предупреждений красного участника" Height="28" HorizontalAlignment="Left" Margin="18,178,0,0" Name="label7" VerticalAlignment="Top" />
+        <ComboBox Height="23" HorizontalAlignment="Left" Margin="18,240,0,330" Name="RedActivityCombo" Text="" Width="231" />
+        <Label Content="+1 активность красному участнику" Height="28" HorizontalAlignment="Left" Margin="18,220,0,0" Name="label8" VerticalAlignment="Top" />
+        <ComboBox Height="23" HorizontalAlignment="Right" Margin="0,240,23,330" Name="BlueActivityCombo" Text="" Width="216" />
+        <Label Content="+1 активность синему участнику" Height="28" HorizontalAlignment="Left" Margin="262,220,0,0" Name="label9" VerticalAlignment="Top" />
+        <ComboBox Height="23" IsTextSearchEnabled="True" Margin="18,283,252,287" Name="ResetRedActivityCombo" Text="" />
+        <Label Content="сброс активности красного участника" Height="28" HorizontalAlignment="Left" Margin="18,262,0,0" Name="label10" VerticalAlignment="Top" />
+        <ComboBox Height="23" HorizontalAlignment="Left" Margin="18,325,0,245" Name="StartPauseTimeCombo" Text="" Width="231" />
+        <Label Content="старт/пауза общего таймера" Height="28" HorizontalAlignment="Left" Margin="18,305,0,0" Name="label11" VerticalAlignment="Top" />
+        <ComboBox Height="23" HorizontalAlignment="Right" Margin="0,325,23,245" Name="ResetTimeCombo" Text="" Width="216" />
+        <Label Content="сброс общего таймера" Height="28" HorizontalAlignment="Left" Margin="262,305,0,0" Name="label12" VerticalAlignment="Top" />
+        <ComboBox Height="23" HorizontalAlignment="Left" Margin="18,367,0,203" Name="StartPauseTechTimeRedCombo" Text="" Width="231" />
+        <Label Content="старт/пауза тех.времени  красного" Height="28" HorizontalAlignment="Left" Margin="18,347,0,0" Name="label13" VerticalAlignment="Top" />
+        <ComboBox Height="23" HorizontalAlignment="Right" Margin="0,367,23,203" Name="ResetTechTimeRedCombo" Text="" Width="216" />
+        <Label Content="сброс тех.времени красного" Height="28" HorizontalAlignment="Left" Margin="262,347,0,0" Name="label14" VerticalAlignment="Top" />
+        <ComboBox Height="23" HorizontalAlignment="Left" Margin="18,410,0,160" Name="StartPauseTechTimeBlueCombo" Text="" Width="231" />
+        <Label Content="старт/пауза тех.времени синего" Height="28" HorizontalAlignment="Left" Margin="18,390,0,0" Name="label15" VerticalAlignment="Top" />
+        <ComboBox Height="23" HorizontalAlignment="Right" Margin="0,410,23,160" Name="ResetTechTimeBlueCombo" Text="" Width="216" />
+        <Label Content="сброс тех.времени синего" Height="28" HorizontalAlignment="Left" Margin="262,390,0,0" Name="label16" VerticalAlignment="Top" />
+        <ComboBox Height="23" IsTextSearchEnabled="True" Margin="262,115,23,455" Name="ResetBluePointsCombo" Text="" />
+        <Label Content="сброс очков синего участника" Height="28" HorizontalAlignment="Left" Margin="262,93,0,0" Name="label17" VerticalAlignment="Top" />
+        <ComboBox Height="23" IsTextSearchEnabled="True" Margin="262,199,23,371" Name="ResetBlueWarningCombo" Text="" />
+        <Label Content="сброс предупреждений синего участника" Height="28" HorizontalAlignment="Left" Margin="262,178,0,0" Name="label18" VerticalAlignment="Top" />
+        <ComboBox Height="23" IsTextSearchEnabled="True" Margin="262,283,23,287" Name="ResetBlueActivityCombo" Text="" />
+        <Label Content="сброс активности красного участника" Height="28" HorizontalAlignment="Left" Margin="262,262,0,0" Name="label19" VerticalAlignment="Top" />
+        <ComboBox Height="23" HorizontalAlignment="Left" Margin="18,453,0,117" Name="BonusRedCombo" Text="" Width="231" />
+        <Label Content="+ красному участнику" Height="28" HorizontalAlignment="Left" Margin="18,432,0,0" Name="label20" VerticalAlignment="Top" />
+        <ComboBox Height="23" HorizontalAlignment="Right" Margin="0,452,23,118" Name="BonusBlueCombo" Text="" Width="216" />
+        <Label Content="+ синему участнику" Height="28" HorizontalAlignment="Left" Margin="262,431,0,0" Name="label21" VerticalAlignment="Top" />
+        <ComboBox Height="23" HorizontalAlignment="Left" Margin="19,538,0,32" Name="StartPauseBlueDeathTimeCombo" Text="" Width="231" />
+        <Label Content="старт/пауза времени удушения синего" Height="28" HorizontalAlignment="Left" Margin="19,517,0,0" Name="label22" VerticalAlignment="Top" />
+        <ComboBox Height="23" HorizontalAlignment="Right" Margin="0,538,22,32" Name="ResetBlueDeathTimeCombo" Text="" Width="216" />
+        <Label Content="сброс времени удушения синего" Height="28" HorizontalAlignment="Left" Margin="263,517,0,0" Name="label23" VerticalAlignment="Top" />
+        <ComboBox Height="23" HorizontalAlignment="Left" Margin="19,495,0,75" Name="StartPauseRedDeathTimeCombo" Text="" Width="231" />
+        <Label Content="старт/пауза времени удушения красного" Height="28" HorizontalAlignment="Left" Margin="18,475,0,0" Name="label24" VerticalAlignment="Top" />
+        <ComboBox Height="23" HorizontalAlignment="Right" Margin="0,494,22,76" Name="ResetRedDeathTimeCombo" Text="" Width="216" />
+        <Label Content="сброс времени удушения красного" HorizontalAlignment="Left" Margin="263,474,0,91" Name="label25" />
+    </Grid>
+</Window>

@@ -1,0 +1,10 @@
+﻿<Window x:Class="WpfApplication2.SelNameWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Выбор участника" Height="87" Width="256" WindowStartupLocation="Manual" WindowStyle="SingleBorderWindow" ResizeMode="NoResize">
+    <Grid>
+        <TextBox Height="23" Name="textBoxNum" Width="153" KeyUp="textBoxNum_KeyUp" Margin="3,2,78,23" />
+        <Button Content="Найти" Height="23" Name="buttonSearch" Click="buttonSearch_Click" KeyUp="buttonSearch_KeyUp" Cursor="Hand" Margin="168,2,6,23" />
+        <Label Content="Введите номер участника" Height="28" Name="labelMessage" Foreground="Green" Visibility="Visible" Margin="6,23,15,-3" />
+    </Grid>
+</Window>

@@ -1,0 +1,96 @@
+﻿<Window x:Class="WpfApplication2.HallWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" MouseDoubleClick="Main_MouseDoubleClick" KeyDown="GoKeyDown" 
+        Title="Экран для зала. F11 - полноэкранный режим." Height="350" Width="525" Icon="/Scoreboard;component/Images/rus.png" Closed="Window_Closed">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Viewbox Stretch="Fill" Grid.Row="1" HorizontalAlignment="Left">
+            <Canvas Width="628" Height="350">
+                <Rectangle Fill="Black" Stroke="White" Canvas.Left="0" Canvas.Top="0" Width="628" Height="35" HorizontalAlignment="Left"></Rectangle>
+                <TextBlock Name="RunningLine" Foreground="White" Text="Бегущая строка" FontSize="25" FontFamily="Verdana" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Canvas.Top="2" FontWeight="Bold" SnapsToDevicePixels="True">   
+                    <TextBlock.Triggers>
+                        <EventTrigger RoutedEvent="TextBlock.Loaded">
+                            <BeginStoryboard>
+                            <Storyboard Name="RunningLineStroy" RepeatBehavior="Forever">                                
+                                <DoubleAnimation Name="RunningLineAnimation" Storyboard.TargetName="RunningLine"
+                                Storyboard.TargetProperty="(Canvas.Left)"                                                
+                                From="650" To="-500" Duration="0:1:00"
+                                RepeatBehavior="1x"/>
+                            </Storyboard>    
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </TextBlock.Triggers>
+                </TextBlock>
+                <Rectangle Fill="Blue" x:Name="BlueRect" Canvas.Left="0" Canvas.Top="35" Width="314" Height="315" HorizontalAlignment="Left" Stroke="#FF1D2EF8" StrokeDashOffset="2" StrokeThickness="3"></Rectangle>
+                <Rectangle Fill="Red" x:Name="RedRect"  Canvas.Left="314" Canvas.Top="35" Width="314" Height="315" HorizontalAlignment="Left" Stroke="#FFF5000D" StrokeDashOffset="2" StrokeThickness="3"></Rectangle>
+                <TextBox Canvas.Left="4" Canvas.Top="54" Height="40" Name="BlueName" Width="245" BorderThickness="1" TextAlignment="Center" FontFamily="Arial" FontSize="22" VerticalAlignment="Center" HorizontalAlignment="Center" Opacity="1" OpacityMask="{x:Null}" Background="Black" Text="" Foreground="White" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" FontWeight="Bold" IsReadOnly="True"></TextBox>
+                <TextBox Background="Black" BorderBrush="White" BorderThickness="1" Canvas.Left="254" Canvas.Top="46" FontFamily="Verdana" FontSize="35" FontWeight="Bold" Foreground="White" Height="56" HorizontalContentAlignment="Center" Name="Weight" Opacity="1" OpacityMask="{x:Null}" Text="+90" TextAlignment="Center" VerticalContentAlignment="Center" Width="120" IsReadOnly="True" />
+                <TextBox Background="#FF170101" BorderBrush="White" BorderThickness="1" Canvas.Left="164" Canvas.Top="111" FontFamily="Arial" FontSize="110" FontWeight="Bold" Foreground="White" Height="124" HorizontalContentAlignment="Center" Name="Time" Opacity="1" OpacityMask="{x:Null}" Text="0:00" TextAlignment="Center" VerticalContentAlignment="Center" Width="299" IsReadOnly="True" />
+                <TextBox Name="PauseTime" Visibility="Hidden" Background="Transparent" BorderBrush="White" BorderThickness="0" Canvas.Left="252" Canvas.Top="129" FontFamily="Arial Black" FontSize="15" Foreground="#FF898989" Height="25" HorizontalContentAlignment="Center" IsReadOnly="True" Opacity="1" OpacityMask="{x:Null}" Text="Пауза" TextAlignment="Center" VerticalContentAlignment="Center" Width="59" Margin="152,82,7,7" />
+                <TextBox Background="Black" BorderBrush="White" BorderThickness="1" Canvas.Left="379" Canvas.Top="54" FontFamily="Arial" FontSize="22" FontWeight="Bold" Foreground="White" Height="40" HorizontalContentAlignment="Center" Name="RedName" Opacity="1" OpacityMask="{x:Null}" Text="" TextAlignment="Center" VerticalContentAlignment="Center" Width="245" IsReadOnly="True" />
+                <TextBox Background="#FF170101" BorderBrush="White" BorderThickness="1" Canvas.Left="4" Canvas.Top="127" FontFamily="Arial" FontSize="80" FontWeight="Bold" Foreground="White" Height="91" HorizontalContentAlignment="Center" IsReadOnly="True" Name="BlueScore" Opacity="1" OpacityMask="{x:Null}" Text="0" TextAlignment="Center" VerticalContentAlignment="Center" Width="153" />
+                <TextBox Background="#FF170101" BorderBrush="White" BorderThickness="1" Canvas.Left="470" Canvas.Top="127" FontFamily="Arial" FontSize="80" FontWeight="Bold" Foreground="White" Height="91" HorizontalContentAlignment="Center" IsReadOnly="True" Name="RedScore" Opacity="1" OpacityMask="{x:Null}" Text="0" TextAlignment="Center" VerticalContentAlignment="Center" Width="153" />
+                <TextBox Background="#FF170101" BorderBrush="White" BorderThickness="1" Canvas.Left="85" Canvas.Top="270" FontFamily="Arial" FontSize="30" FontWeight="Bold" Foreground="White" Height="62" HorizontalContentAlignment="Center" IsReadOnly="True" Name="BlueTechTime" Opacity="1" OpacityMask="{x:Null}" Text="0:00" TextAlignment="Center" VerticalContentAlignment="Center" Width="137" />
+                <TextBox Name="PauseBlueTechTime" Visibility="Hidden" Background="Transparent" BorderBrush="White" BorderThickness="0" Canvas.Left="11" Canvas.Top="227" FontFamily="Arial Black" FontSize="15" Foreground="#FF898989" Height="25" HorizontalContentAlignment="Center" IsReadOnly="True" Opacity="1" OpacityMask="{x:Null}" Text="Пауза" TextAlignment="Center" VerticalContentAlignment="Center" Width="59" Margin="152,82,7,7" />
+                <TextBox Background="#FF170101" BorderBrush="White" BorderThickness="1" Canvas.Left="404" Canvas.Top="270" FontFamily="Arial" FontSize="30" FontWeight="Bold" Foreground="White" Height="62" HorizontalContentAlignment="Center" IsReadOnly="True" Name="RedTechTime" Opacity="1" OpacityMask="{x:Null}" Text="0:00" TextAlignment="Center" VerticalContentAlignment="Center" Width="137" />
+                <TextBox Name="PauseRedTechTime" Visibility="Hidden" Background="Transparent" BorderBrush="White" BorderThickness="0" Canvas.Left="329" Canvas.Top="227" FontFamily="Arial Black" FontSize="15" Foreground="#FF898989" Height="25" HorizontalContentAlignment="Center" IsReadOnly="True" Opacity="1" OpacityMask="{x:Null}" Text="Пауза" TextAlignment="Center" VerticalContentAlignment="Center" Width="59" Margin="152,82,7,7" />
+                <TextBox Background="#FF170101" BorderBrush="White" BorderThickness="1" Canvas.Left="4" Canvas.Top="270" FontFamily="Arial" FontSize="35" FontWeight="Bold" Foreground="White" Height="62" HorizontalContentAlignment="Center" IsReadOnly="True" Name="BlueActivityText" Opacity="1" OpacityMask="{x:Null}" Text="0" TextAlignment="Center" VerticalContentAlignment="Center" Width="72" />
+                <TextBox Background="#FF170101" BorderBrush="White" BorderThickness="1" Canvas.Left="551" Canvas.Top="270" FontFamily="Arial" FontSize="35" FontWeight="Bold" Foreground="White" Height="62" HorizontalContentAlignment="Center" IsReadOnly="True" Name="RedActivityText" Opacity="1" OpacityMask="{x:Null}" Text="0" TextAlignment="Center" VerticalContentAlignment="Center" Width="72" />
+                <TextBox Background="#FF170101" BorderBrush="White" BorderThickness="1" Canvas.Left="232" Canvas.Top="270" FontFamily="Arial" FontSize="35" FontWeight="Bold" Foreground="White" Height="62" HorizontalContentAlignment="Center" IsReadOnly="True" Name="BlueWarningText" Opacity="1" OpacityMask="{x:Null}" Text="0" TextAlignment="Center" VerticalContentAlignment="Center" Width="72" />
+                <TextBox Background="#FF170101" BorderBrush="White" BorderThickness="1" Canvas.Left="323" Canvas.Top="270" FontFamily="Arial" FontSize="35" FontWeight="Bold" Foreground="White" Height="62" HorizontalContentAlignment="Center" IsReadOnly="True" Name="RedWarningText" Opacity="1" OpacityMask="{x:Null}" Text="0" TextAlignment="Center" VerticalContentAlignment="Center" Width="72" />
+                <Label Canvas.Left="106" Canvas.Top="247" Content="Тех. время" FontFamily="Verdana" FontSize="14" FontWeight="Bold" Foreground="White" Height="28" Name="BlueTLabel" />
+                <Label Canvas.Left="27" Canvas.Top="246" Content="А" FontFamily="Verdana" FontSize="17" FontWeight="Bold" Foreground="White" Height="29" Name="BlueALabel" />
+                <Label Canvas.Left="256" Canvas.Top="246" Content="П" FontFamily="Verdana" FontSize="17" FontWeight="Bold" Foreground="White" Height="30" Name="BluePLabel" />
+                <Label Canvas.Left="426" Canvas.Top="247" Content="Тех. время" FontFamily="Verdana" FontSize="14" FontWeight="Bold" Foreground="White" Height="28" Name="RedTLabel" />
+                <Label Canvas.Left="575" Canvas.Top="246" Content="А" FontFamily="Verdana" FontSize="17" FontWeight="Bold" Foreground="White" Height="29" Name="RedALabel" />
+                <Label Canvas.Left="347" Canvas.Top="246" Content="П" FontFamily="Verdana" FontSize="17" FontWeight="Bold" Foreground="White" Height="30" Name="RedPLabel" />
+                <Label Canvas.Left="51" Canvas.Top="103" Content="СЧЕТ" FontFamily="Verdana" FontSize="17" FontWeight="Bold" Foreground="White" Height="29" Name="BlueScoreLabel" BorderThickness="0" />
+                <Label Canvas.Left="516" Canvas.Top="103" Content="СЧЕТ" FontFamily="Verdana" FontSize="17" FontWeight="Bold" Foreground="White" Height="29" Name="RedScoreLabel" />
+
+                <Grid Name="BlueTimeDeathGrid" Canvas.Left="64" Canvas.Top="181" Visibility="Hidden">
+                    <Grid.Triggers>
+                        <EventTrigger RoutedEvent="Grid.Loaded">
+                            <BeginStoryboard>
+                                <Storyboard Name="BlueDeathAnim" RepeatBehavior="1x">
+                                    <DoubleAnimation Name="BlueDeathAnimation" Storyboard.TargetName="BlueTimeDeathGrid" Completed="BlueDeathAnimation_Completed"
+                                        Storyboard.TargetProperty="(Canvas.Left)"                                                
+                                        From="-70" To="64" Duration="0:0:00.1"
+                                        RepeatBehavior="1x"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Grid.Triggers>
+                    <Rectangle Canvas.Left="33" Canvas.Top="180" Height="114" Stroke="#FFF5ECEC" Width="179" Fill="#FF100101" StrokeThickness="4" />
+                    <TextBox Background="#FF170101" BorderBrush="White" BorderThickness="1" Canvas.Left="36" Canvas.Top="210" FontFamily="Arial" FontSize="63" FontWeight="Bold" Foreground="White" Height="87" HorizontalContentAlignment="Center" IsReadOnly="True" Name="BlueTimeDeath" Opacity="1" OpacityMask="{x:Null}" Text="0:00" TextAlignment="Center" VerticalContentAlignment="Center" Width="175" Margin="1,26,3,1" />
+                    <!--<TextBox Name="PauseBlueTimeDeath" Visibility="Hidden" Background="#FF170101" BorderBrush="White" BorderThickness="0" Canvas.Left="36" Canvas.Top="210" FontFamily="Arial Black" FontSize="20" FontWeight="Bold" Foreground="#FF898989" Height="25" HorizontalContentAlignment="Center" IsReadOnly="True" Opacity="1" OpacityMask="{x:Null}" Text="||" TextAlignment="Center" VerticalContentAlignment="Center" Width="20" Margin="152,82,7,7" />-->
+                    <TextBox Name="PauseBlueTimeDeath" Visibility="Hidden" Background="Transparent" BorderBrush="White" BorderThickness="0" Canvas.Left="36" Canvas.Top="210" FontFamily="Arial Black" FontSize="15" Foreground="#FF898989" Height="25" HorizontalContentAlignment="Center" IsReadOnly="True" Opacity="1" OpacityMask="{x:Null}" Text="Пауза" TextAlignment="Center" VerticalContentAlignment="Center" Width="59" Margin="117,89,3,0" />
+                    <Label  Content="Болевой, удушение" FontFamily="Verdana" FontSize="14" FontWeight="Bold" Foreground="White" Height="28" Margin="6,1,-6,85" />
+                </Grid>
+                <Grid Name="RedTimeDeathGrid" Canvas.Left="384" Canvas.Top="181" Visibility="Hidden">
+                    <Grid.Triggers>
+                        <EventTrigger RoutedEvent="Grid.Loaded">
+                            <BeginStoryboard>
+                                <Storyboard Name="RedDeathAnim" RepeatBehavior="1x">
+                                    <DoubleAnimation Name="RedDeathAnimation" Storyboard.TargetName="RedTimeDeathGrid" Completed="RedDeathAnimation_Completed"
+                                        Storyboard.TargetProperty="(Canvas.Left)"                                                
+                                        From="514" To="384" Duration="0:0:00.1"
+                                        RepeatBehavior="1x"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Grid.Triggers>
+                    <Rectangle Canvas.Left="33" Canvas.Top="180" Height="114" Stroke="#FFF5ECEC" Width="179" Fill="#FF100101" StrokeThickness="4" />
+                    <TextBox Background="#FF170101" BorderBrush="White" BorderThickness="1" Canvas.Left="36" Canvas.Top="210" FontFamily="Arial" FontSize="63" FontWeight="Bold" Foreground="White" Height="87" HorizontalContentAlignment="Center" IsReadOnly="True" Name="RedTimeDeath" Opacity="1" OpacityMask="{x:Null}" Text="0:00" TextAlignment="Center" VerticalContentAlignment="Center" Width="175" Margin="1,26,3,1" />
+                    <!--<TextBox Name="PauseRedTimeDeath" Visibility="Hidden" Background="#FF170101" BorderBrush="White" BorderThickness="0" Canvas.Left="36" Canvas.Top="210" FontFamily="Arial Black" FontSize="20" FontWeight="Bold" Foreground="#FF898989" Height="25" HorizontalContentAlignment="Center" IsReadOnly="True" Opacity="1" OpacityMask="{x:Null}" Text="||" TextAlignment="Center" VerticalContentAlignment="Center" Width="20" Margin="152,82,7,7" />-->
+                    <TextBox Name="PauseRedTimeDeath" Visibility="Hidden" Background="Transparent" BorderBrush="White" BorderThickness="0" Canvas.Left="36" Canvas.Top="210" FontFamily="Arial Black" FontSize="15" Foreground="#FF898989" Height="25" HorizontalContentAlignment="Center" IsReadOnly="True" Opacity="1" OpacityMask="{x:Null}" Text="Пауза" TextAlignment="Center" VerticalContentAlignment="Center" Width="59" Margin="117,89,3,0" />
+                    <Label  Content="Болевой, удушение" FontFamily="Verdana" FontSize="14" FontWeight="Bold" Foreground="White" Height="28" Margin="6,1,-6,85" />
+                </Grid>
+                <Label Name="labelTeamBlue" BorderThickness="0" Canvas.Left="4" Canvas.Top="31" Content="КОМАНДА СИНЕГО" FontFamily="Verdana" FontSize="13" FontWeight="Bold" Foreground="White" Height="27" Width="244" FontStyle="Normal" FontStretch="Normal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" />
+                <Label BorderThickness="0" Canvas.Left="382" Canvas.Top="31" Content="КОМАНДА КРАСНОГО" FontFamily="Verdana" FontSize="13" FontStretch="Normal" FontStyle="Normal" FontWeight="Bold" Foreground="White" Height="27" Name="labelTeamRed" Width="244" HorizontalContentAlignment="Center" />
+                <!--<Image Cursor="Hand" DataContext="{Binding}" Height="32" Margin="10,0,0,0" Name="image1" Source="/WpfApplication1;component/Images/fullscreen.png" Stretch="Fill" Width="32" MouseLeftButtonUp="image1_MouseLeftButtonUp" />-->
+            </Canvas>
+        </Viewbox>
+    </Grid>
+</Window>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<parametrs>
+  <Text>Соревнования по рукопашному бою</Text>
+  <RedPoints>Q</RedPoints>
+  <BluePoints>W</BluePoints>
+  <ResetBluePoints>R</ResetBluePoints>
+  <ResetRedPoints>E</ResetRedPoints>
+  <RedWarning>A</RedWarning>
+  <BlueWarning>S</BlueWarning>  
+  <ResetBlueWarning>F</ResetBlueWarning>
+  <ResetRedWarning>D</ResetRedWarning>
+  <RedActivity>Z</RedActivity>
+  <BlueActivity>X</BlueActivity>
+  <ResetBlueActivity>V</ResetBlueActivity>
+  <ResetRedActivity>C</ResetRedActivity>
+  <StartPauseTheTimer>P</StartPauseTheTimer>
+  <ResumeTimer>L</ResumeTimer>
+  <StartPauseTheTimerRedDoctor>I</StartPauseTheTimerRedDoctor>
+  <ResetTheTimerRedDoctor>O</ResetTheTimerRedDoctor>
+  <StartPauseTheTimerBlueDoctor>J</StartPauseTheTimerBlueDoctor>
+  <ResetTheTimerBlueDoctor>K</ResetTheTimerBlueDoctor>
+  <BlueBonus>Y</BlueBonus>
+  <RedBonus>T</RedBonus>  
+  <BlueDeath>H</BlueDeath>  
+  <RedDeath>G</RedDeath>  
+  <StopBlueDeath>N</StopBlueDeath>  
+  <StopRedDeath>B</StopRedDeath>    
+</parametrs>

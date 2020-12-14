@@ -1,0 +1,25 @@
+﻿<Window x:Class="WpfApplication2.ExcelWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Форма загрузки участников" Height="420" Width="684" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <ListView Margin="10,29,10,10" Name="lvDataBinding" ItemsSource="{Binding Path=Table}">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Height" Value="20" />
+                </Style>
+            </ListView.ItemContainerStyle>
+
+            <ListView.View>
+                <GridView x:Name="gridView">
+                    <GridViewColumn Width="50" Header="Номер" DisplayMemberBinding="{Binding num}" />
+                    <GridViewColumn Width="234" Header="Фамилия" DisplayMemberBinding="{Binding name}" />
+                    <GridViewColumn Width="200" Header="Команда"  DisplayMemberBinding="{Binding team}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="Загрузить список участников" Height="23" HorizontalAlignment="Left" Margin="10,3,0,0" Name="buttonLoad" VerticalAlignment="Top" Width="172" Click="buttonLoad_Click" />
+        <ProgressBar Height="10" HorizontalAlignment="Left" Margin="188,10,0,0" Name="progressBar1" VerticalAlignment="Top" Width="234" />
+        <Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="428,1,0,0" Name="labelInfo" VerticalAlignment="Top" Visibility="Visible" Foreground="Green" />
+    </Grid>
+</Window>
